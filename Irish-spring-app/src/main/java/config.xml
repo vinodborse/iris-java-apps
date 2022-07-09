@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="dt" class="com.vinod.User"/>
+	
+	
+	<!-- Setter Injection -->
+<!-- 	<bean id="s1" class="com.vinod.bean.work.Student">
+		<property name="firstName" value="Don"/>
+		<property name="lastName" value="Bhai"/>
+	</bean> -->
+	
+	<!--Constructor Injection -->
+	
+	<bean id = "student2" class="com.vinod.bean.work.Student">
+		<constructor-arg value="Koaml" type="String" index="0"/>
+		<constructor-arg value="Don" type="String" index="1"/>
+	</bean>
+
+	
+	<!-- Inner Bean -->
+<!-- 	<bean id="vinu" class="com.vinod.bean.work.Detail">
+		<constructor-arg>
+			<bean class="com.vinod.bean.work.Student">
+				<property name="firstName" value="Tamraj"/>
+				<property name="lastName" value="Kilwish"/>
+			</bean>
+		</constructor-arg>
+	</bean> -->
+	
+	<!-- Referance Bean /  Object injection-->
+	<!-- <bean id="vinu" class="com.vinod.bean.work.Detail">
+		<constructor-arg ref="s2"/>
+	</bean> -->
+	
+	<!-- Autowire -->
+	<bean id="vinu" class="com.vinod.bean.work.Detail" autowire="byType"/>
+	
+	<!-- <bean id="vinu2" class="com.vinod.bean.work.Detail">
+		<constructor-arg ref="s2"/>
+		
+		<constructor-arg>
+			<set>
+				<ref bean="s2"/>
+				<ref bean="s3"/>
+			</set>
+		</constructor-arg>
+	</bean> -->
+	
+</beans>
